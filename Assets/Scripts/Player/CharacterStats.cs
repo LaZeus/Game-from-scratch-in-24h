@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 
@@ -10,7 +11,12 @@ public class CharacterStats : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Player's speed")]
-    protected float MovementSpeed = 10f;
+    protected float movementSpeed = 10f;
+
+    [SerializeField]
+    [Tooltip("Player's sanity value")]
+    protected int sanity = 100;
+
 
     [Header("Required Components")]
 
@@ -21,4 +27,12 @@ public class CharacterStats : MonoBehaviour
     [SerializeField]
     [Tooltip("The player's gameobject that contains the art")]
     protected Transform artParent;
+
+
+    [Header("References - Be sure to assign it on Start")]
+
+    [SerializeField]
+    [Tooltip("Reference to the sanity slider")]
+    protected Slider sanitySlider;
+
 }

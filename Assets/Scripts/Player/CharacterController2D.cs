@@ -18,7 +18,7 @@ public class CharacterController2D : CharacterStats
     // Update is called once per frame
     private void Update()
     {
-        Movement(MovementSpeed);
+        Movement(movementSpeed);
         FlipArt();
     }
 

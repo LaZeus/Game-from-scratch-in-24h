@@ -30,8 +30,7 @@ public class CharacterStats : MonoBehaviour
 
     [Header("References - Be sure to assign it on Start")]
 
-    [SerializeField]
     [Tooltip("Reference to the sanity slider")]
-    protected SanityUI sanitySlider;
+    public SanityUI sanitySlider;
 
 }

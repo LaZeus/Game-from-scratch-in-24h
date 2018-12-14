@@ -24,7 +24,6 @@ public class CharacterController2D : CharacterStats
         FlipArt();
     }
 
-
     private void Movement(float speed)
     {
         float x = Input.GetAxisRaw("Horizontal");

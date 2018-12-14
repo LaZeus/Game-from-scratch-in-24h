@@ -21,7 +21,7 @@ public class SanityUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        TextUpdate();
     }
 
     // Update is called once per frame

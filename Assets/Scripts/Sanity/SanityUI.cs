@@ -27,7 +27,12 @@ public class SanityUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //TextUpdate();
+        // Used for debugging..Gonna be removed later
+
+        if (Input.GetMouseButtonDown(0))
+            InterpolateValue(-25);        
+        else if (Input.GetMouseButtonDown(1))
+            InterpolateValue(25);
     }
 
     private void TextUpdate()
@@ -37,11 +42,7 @@ public class SanityUI : MonoBehaviour
 
     public void InterpolateValue(float addValue)
     {
-        realValue += addValue;
-        if (realValue > 100)
-            realValue = 100;
-        else if (realValue < 0)
-            realValue = 0;
+        CalculateRealValue(addValue);
 
         if (interpolation != null)
             StopCoroutine(interpolation);
@@ -49,17 +50,34 @@ public class SanityUI : MonoBehaviour
         interpolation = StartCoroutine(InterpolateValueChange());
     }
 
+    private void CalculateRealValue(float addValue)
+    {
+        realValue += addValue;
+
+        if (realValue >= 100)
+            realValue = 100;
+        else if (realValue < 0)
+        {
+            realValue = 0;
+            // die
+        }
+
+    }
+
     IEnumerator InterpolateValueChange()
     {
-        //float sign = Mathf.Sign(realValue - sanitySlider.value);
-        float valuedt = (realValue - sanitySlider.value) / 30;
+        Debug.Log("lol jk");
+        float valuedt = (realValue - sanitySlider.value);
 
-        while (Mathf.Abs(realValue - sanitySlider.value) <= 0.05f)
+        while (Mathf.Abs(realValue - sanitySlider.value) > 1f)
         {
             sanitySlider.value += valuedt * Time.deltaTime;
             TextUpdate();
             yield return null;
         }
-       
+
+        sanitySlider.value = realValue;
+        TextUpdate();
+
     }
 }

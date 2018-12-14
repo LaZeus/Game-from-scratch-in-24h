@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 
@@ -33,6 +32,6 @@ public class CharacterStats : MonoBehaviour
 
     [SerializeField]
     [Tooltip("Reference to the sanity slider")]
-    protected Slider sanitySlider;
+    protected SanityUI sanitySlider;
 
 }

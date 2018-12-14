@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CharacterController2D : CharacterStats
 {
     private void Awake()
@@ -12,7 +13,8 @@ public class CharacterController2D : CharacterStats
     // Start is called before the first frame update
     private void Start()
     {
-        
+        if (sanitySlider == null)
+            sanitySlider = GameObject.Find("SanityUI").GetComponent<SanityUI>();
     }
 
     // Update is called once per frame

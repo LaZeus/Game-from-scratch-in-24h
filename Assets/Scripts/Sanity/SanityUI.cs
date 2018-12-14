@@ -65,8 +65,7 @@ public class SanityUI : MonoBehaviour
     }
 
     IEnumerator InterpolateValueChange()
-    {
-        Debug.Log("lol jk");
+    {       
         float valuedt = (realValue - sanitySlider.value);
 
         while (Mathf.Abs(realValue - sanitySlider.value) > 1f)

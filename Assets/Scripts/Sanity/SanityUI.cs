@@ -27,12 +27,7 @@ public class SanityUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Used for debugging..Gonna be removed later
 
-        if (Input.GetMouseButtonDown(0))
-            InterpolateValue(-25);        
-        else if (Input.GetMouseButtonDown(1))
-            InterpolateValue(25);
     }
 
     private void TextUpdate()

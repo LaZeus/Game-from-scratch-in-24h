@@ -25,7 +25,10 @@ public class ChangeSanity : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.CompareTag("Player"))        
-            col.GetComponent<CharacterController2D>().sanitySlider.GetComponent<SanityUI>().InterpolateValue(amountOfSanity);       
+        if (col.CompareTag("Player"))
+        {
+            col.GetComponent<CharacterController2D>().sanitySlider.GetComponent<SanityUI>().InterpolateValue(amountOfSanity);
+            col.GetComponent<CharacterAnimations>().TakeDamageAnimation();
+        }
     }
 }

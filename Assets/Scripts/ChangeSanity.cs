@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SanityLose : MonoBehaviour
+public class ChangeSanity : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("The amount of sanity the player will lose")]
@@ -11,7 +11,10 @@ public class SanityLose : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (amountOfSanity == 0)
+        {
+            amountOfSanity = -100;
+        }
     }
 
     // Update is called once per frame

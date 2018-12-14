@@ -123,8 +123,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 18527110439155470}
   shakeValues:
-  - 0.2
-  - 0.1
+  - 2
+  - 0.5
 --- !u!1 &1617907866888799712
 GameObject:
   m_ObjectHideFlags: 0

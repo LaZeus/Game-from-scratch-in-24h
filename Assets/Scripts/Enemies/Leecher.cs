@@ -16,6 +16,9 @@ public class Leecher : MonoBehaviour
     [SerializeField]
     private int nextPoint = 0;
 
+    [SerializeField]
+    private GameObject LeechHeadPrefab;
+
     private void Start()
     {
         if (points == null)
@@ -38,7 +41,10 @@ public class Leecher : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            col.transform.Find("MCHead");
+            GameObject leechHead = Instantiate(LeechHeadPrefab, col.transform.Find("Art").Find("MCHead"));
+            leechHead.transform.localPosition = Vector3.zero;
+
+            Destroy(transform.parent.gameObject);
         }
     }
 }

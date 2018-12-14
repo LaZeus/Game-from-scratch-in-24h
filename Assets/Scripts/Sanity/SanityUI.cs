@@ -47,16 +47,12 @@ public class SanityUI : MonoBehaviour
 
     private void CalculateRealValue(float addValue)
     {
-        realValue += addValue;
+        realValue -= addValue;
 
         if (realValue >= 100)
             realValue = 100;
         else if (realValue < 0)
-        {
-            realValue = 0;
-            // die
-        }
-
+            realValue = 0;     
     }
 
     IEnumerator InterpolateValueChange()
@@ -72,6 +68,11 @@ public class SanityUI : MonoBehaviour
 
         sanitySlider.value = realValue;
         TextUpdate();
+
+        if (sanitySlider.value == 0)
+        {
+            //die code here
+        }
 
     }
 }

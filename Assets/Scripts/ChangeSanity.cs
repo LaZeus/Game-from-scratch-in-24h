@@ -13,7 +13,7 @@ public class ChangeSanity : MonoBehaviour
     {
         if (amountOfSanity == 0)
         {
-            amountOfSanity = -100;
+            amountOfSanity = 100;
         }
     }
 
